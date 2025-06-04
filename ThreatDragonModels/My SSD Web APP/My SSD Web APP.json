@@ -389,8 +389,8 @@
                 "text": "WebApp"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -486,7 +486,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -530,14 +530,40 @@
                   "new": false,
                   "number": 15,
                   "score": "8"
+                },
+                {
+                  "id": "bb9f6554-66f6-4128-811d-e2495f6b604f",
+                  "title": "Attacker tricks user to entering credentials",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Attacker tricks user to entering credentials",
+                  "mitigation": "Block user that attempt to ask users about their credential",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "5"
+                },
+                {
+                  "id": "f550a88b-dc0b-4739-ad3f-ec54a0876536",
+                  "title": "Attacker reports user with multiple fake account",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "description": "Attacker reports user with multiple fake account",
+                  "mitigation": "abuse count thresholding, admin only moderation workflow",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "2"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 1,
                 "tampering": 1,
                 "repudiation": 0,
-                "informationDisclosure": 0,
-                "denialOfService": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 2,
                 "elevationOfPrivilege": 0
               }
             }
@@ -699,8 +725,8 @@
                 "text": "Attacker"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -796,9 +822,23 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "2c54af78-2497-43a5-9d79-0d6068359ddd",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 16,
+                  "score": ""
+                }
+              ]
             }
           }
         ]
@@ -806,6 +846,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 15
+    "threatTop": 18
   }
 }
