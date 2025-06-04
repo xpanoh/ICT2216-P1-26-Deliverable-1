@@ -491,7 +491,55 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "40d44307-fabe-4da9-b2f9-9e223292dbd1",
+                  "title": "Attacker uploads malicious files",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attacker uploads malicious file to server instead of images",
+                  "mitigation": "File check",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "7"
+                },
+                {
+                  "id": "7ed21780-0a53-42fc-beb5-3326d8881ed9",
+                  "title": "Mass Fake account register",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Attacker register many fake accounts",
+                  "mitigation": "Rate limiting, input validation, captcha",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "7"
+                },
+                {
+                  "id": "421c7ded-2852-48e4-8971-d6472fb36164",
+                  "title": "Stealing session token",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "attacker steal session token of another user",
+                  "mitigation": "Token Rotation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -614,7 +662,27 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "c999b733-c5ae-4e50-8f4c-07c56c3c9518",
+                  "title": "SQL Injection",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Malicious SQL injection attempts",
+                  "mitigation": "Input validation and SQL parametrized query",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -731,13 +799,6 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           }
         ]
@@ -745,6 +806,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 9
+    "threatTop": 15
   }
 }
