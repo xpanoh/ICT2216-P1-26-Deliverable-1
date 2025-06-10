@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "53c8f773-099f-4280-a6b8-02af02157165",
-            "zIndex": 5,
             "data": {
               "type": "tm.Process",
               "name": "Web Frontend",
@@ -160,6 +160,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -243,7 +244,6 @@
               ]
             },
             "id": "10d66e94-558f-4b5b-b9a7-e2ca91c8c75c",
-            "zIndex": 6,
             "data": {
               "type": "tm.Store",
               "name": "SQL Database",
@@ -283,6 +283,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 7,
             "ports": {
               "groups": {
                 "top": {
@@ -366,7 +367,6 @@
               ]
             },
             "id": "a51988b1-b12a-447c-bb26-c102de66827d",
-            "zIndex": 7,
             "data": {
               "type": "tm.Store",
               "name": "NoSQL Database",
@@ -492,7 +492,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "DB Query/Response",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -504,7 +504,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "DB Query/Response"
             ],
             "id": "0c883265-7f79-4a3d-9ff1-8a4dda2fc92f",
             "source": {
@@ -615,13 +615,13 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Trust Boundary",
+              "name": "Firewall",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
             },
             "labels": [
-              "Trust Boundary"
+              "Firewall"
             ],
             "id": "d0af292d-c2f4-47d7-b17b-47749bc22bce",
             "source": {
@@ -671,7 +671,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "DB Query/Response",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -683,7 +683,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "DB Query/Response"
             ],
             "id": "7224850f-52ef-4f97-a8da-69ea36e1a996",
             "source": {
@@ -716,7 +716,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "HTTPS Request",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -728,7 +728,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "HTTPS Request"
             ],
             "id": "ca5004e3-3c9f-479d-beb7-e488ba231919",
             "source": {
@@ -742,6 +742,14 @@
             "vertices": [
               {
                 "x": 220,
+                "y": -60
+              },
+              {
+                "x": 220,
+                "y": -80
+              },
+              {
+                "x": 240,
                 "y": -60
               }
             ]
@@ -766,7 +774,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Web data",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -778,7 +786,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Web data"
             ],
             "id": "01e4d128-d965-4770-87bc-655366e3d436",
             "source": {
@@ -811,7 +819,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "API Data",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -823,7 +831,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "API Data"
             ],
             "id": "595076a2-8115-4d35-9769-6f62fcc54a88",
             "source": {
@@ -856,7 +864,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "API Data",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -868,7 +876,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "API Data"
             ],
             "id": "341d2e27-cd6b-43cb-b611-e0fe183dbf8b",
             "source": {
@@ -901,7 +909,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "HTTPS",
+              "name": "HTTPS Response",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -913,7 +921,7 @@
               "threats": []
             },
             "labels": [
-              "HTTPS"
+              "HTTPS Response"
             ],
             "id": "3130d4a3-aab2-4f77-b9da-ddb042618e44",
             "source": {
@@ -927,9 +935,44 @@
             "vertices": [
               {
                 "x": 220,
+                "y": 40
+              },
+              {
+                "x": 200,
                 "y": 20
+              },
+              {
+                "x": 170,
+                "y": 0
               }
             ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Intranet",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Intranet"
+            ],
+            "id": "cafd6dc4-5773-4452-a621-df821e3d3070",
+            "source": {
+              "x": 890,
+              "y": -230
+            },
+            "target": {
+              "x": 930,
+              "y": 260
+            },
+            "vertices": []
           },
           {
             "position": {
@@ -952,6 +995,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1035,7 +1079,6 @@
               ]
             },
             "id": "bdb1263a-f5a8-4db7-9fa7-be0b0adca3d0",
-            "zIndex": 15,
             "data": {
               "type": "tm.Process",
               "name": "Email API",
@@ -1071,6 +1114,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -1166,8 +1210,7 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
-            },
-            "zIndex": 16
+            }
           },
           {
             "position": {
@@ -1190,6 +1233,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -1273,7 +1317,6 @@
               ]
             },
             "id": "72828ce6-8e4f-496d-b478-b522d347f855",
-            "zIndex": 17,
             "data": {
               "type": "tm.Actor",
               "name": "User",
@@ -1306,6 +1349,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 18,
             "ports": {
               "groups": {
                 "top": {
@@ -1389,7 +1433,6 @@
               ]
             },
             "id": "08975207-3220-49eb-a3be-48bda1100175",
-            "zIndex": 18,
             "data": {
               "type": "tm.Process",
               "name": "App Server",
